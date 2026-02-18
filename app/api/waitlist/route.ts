@@ -23,8 +23,33 @@ export async function POST(req: NextRequest) {
         { status: 400 },
       );
     }
-    console.log("SBD", DATABASE_ID);
-    console.log("SBA", NOTION_API_KEY);
+     // Check if user already exists
+    const queryResponse = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${NOTION_API_KEY}`,
+        "Content-Type": "application/json",
+        "Notion-Version": "2022-06-28",
+      },
+      body: JSON.stringify({
+        filter: {
+          property: "Email",
+          email: {
+            equals: email,
+          },
+        },
+      }),
+    });
+
+    if (queryResponse.ok) {
+      const queryData = await queryResponse.json();
+      if (queryData.results.length > 0) {
+        return NextResponse.json(
+          { error: "You are already on the waitlist!" },
+          { status: 400 },
+        );
+      }
+    }
 
     const response = await fetch("https://api.notion.com/v1/pages", {
       method: "POST",
