@@ -20,6 +20,18 @@ export const metadata: Metadata = {
   icons: {
     icon: "/image.png"
   },
+  openGraph: {
+    title: "Superblogger",
+    description: "Join the waitlist",
+    images: ["https://superblogger.site/api/og"]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Superblogger",
+    description: "Join the waitlist",
+    images: ["https://superblogger.site/api/og"]
+  }
+
 };
 
 export default function RootLayout({
