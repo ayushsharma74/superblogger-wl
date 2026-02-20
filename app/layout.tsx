@@ -23,13 +23,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Superblogger",
     description: "Join the waitlist",
-    images: ["https://superblogger.site/api/og"]
+    images: ["https://waitlist.superblogger.site/api/og"]
   },
   twitter: {
     card: "summary_large_image",
     title: "Superblogger",
     description: "Join the waitlist",
-    images: ["https://superblogger.site/api/og"]
+    images: ["https://waitlist.superblogger.site/api/og"]
   }
 
 };
