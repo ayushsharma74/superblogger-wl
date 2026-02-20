@@ -333,20 +333,7 @@ export default function WaitlistPage() {
           </div>
         </motion.div>
 
-        {/* Footer link */}
-        <motion.div
-          className="mt-8 text-xs text-muted-foreground"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-        >
-          <Link
-            href="/"
-            className="hover:text-foreground transition-colors underline underline-offset-4"
-          >
-            ← Back to home
-          </Link>
-        </motion.div>
+    
       </motion.div>
     </div>
   );
